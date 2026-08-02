@@ -1,0 +1,19 @@
+{
+  "name": "aether-spotify-server",
+  "version": "1.0.0",
+  "description": "Secure backend for the Aether music app: Spotify OAuth (PKCE), API proxy, and Musixmatch synced lyrics proxy.",
+  "type": "commonjs",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "dotenv": "^16.4.5"
+  }
+}
