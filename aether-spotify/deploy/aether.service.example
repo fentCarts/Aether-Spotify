@@ -1,0 +1,21 @@
+; Copy to /etc/systemd/system/aether.service, edit the paths/user, then:
+;   sudo systemctl daemon-reload
+;   sudo systemctl enable --now aether
+;   sudo systemctl status aether
+;   journalctl -u aether -f        (tail logs)
+
+[Unit]
+Description=Aether Spotify server
+After=network.target
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/var/www/aether-spotify/server
+EnvironmentFile=/var/www/aether-spotify/server/.env
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
